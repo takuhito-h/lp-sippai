@@ -1,0 +1,161 @@
+//------------------------------------------------------------------------------------------------
+//
+//  基本設定用
+//
+//------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------
+//  @font-face
+//--------------------------------------------------------------------
+@font-face {
+   font-family: 'Noto Sans Japanese';
+   font-style: normal;
+   font-weight: 900;
+   src: url(http://fonts.gstatic.com/ea/notosansjapanese/v3/NotoSansJP-Black.woff2) format('woff2'),
+        url(http://fonts.gstatic.com/ea/notosansjapanese/v3/NotoSansJP-Black.woff) format('woff'),
+        url(http://fonts.gstatic.com/ea/notosansjapanese/v3/NotoSansJP-Black.otf) format('opentype');
+}
+
+//--------------------------------------------------------------------
+//  基本設定
+//--------------------------------------------------------------------
+html{
+    font-size: 60%;
+
+    &.is-loading{
+        height: 100%;
+
+        body{
+            overflow: hidden;
+            height: 100%;
+        }
+    }
+}
+
+body{
+    position: relative;
+    background: #000 url(../img/bg.gif) repeat-y top center;
+    background-size: 100% auto;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    color: #fff;
+    font-family: "Noto Sans Japanese", "メイリオ", "Meiryo", verdana, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", Osaka,"ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
+    font-weight: 900;
+    line-height: 1.5;
+    overflow-y: scroll;
+    min-height: 100%;
+}
+
+// for IE6
+* html body{
+    font-family: "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
+}
+
+//------------------------------------------------------------------
+//  リセット
+//------------------------------------------------------------------
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+}
+
+img{
+    vertical-align: top;
+    max-width: 100%;
+}
+
+p{
+    margin: 0;
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+dl{
+    margin: 0;
+}
+
+dd{
+    margin: 0;
+}
+
+th{
+    text-align: left;
+    vertical-align: top;
+}
+
+label, select, option{
+    cursor: pointer;
+}
+
+input[type=radio]{
+    vertical-align: middle;
+    margin-right: 0.3em;
+}
+
+//------------------------------------------------------------------
+//  リンク設定
+//------------------------------------------------------------------
+a{
+    color: inherit;
+}
+
+a:hover,
+input[type="submit"]:hover,
+button:hover{
+    opacity: 0.6;
+}
+
+button:active,
+button:focus{
+    outline: none;
+}
+
+.is-focus_link{
+    position: relative;
+    top: 1px;
+}
+
+//--------------------------------------------------------------------
+//  プレイスホルダー設定
+//--------------------------------------------------------------------
+.is-placeholder{
+    color: #aaa;
+}
+
+::placeholder{
+    color: #aaa;
+}
+
+//--------------------------------------------------------------------
+//  clearfix
+//--------------------------------------------------------------------
+.clearfix:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+//----------------------------------------------------------------------------------------
+//
+//  Smartphoneスタイル
+//
+//----------------------------------------------------------------------------------------
+@media screen and (min-width: 1000px){
+    html{
+        font-size: 100%;
+    }
+}
+
+//----------------------------------------------------------------------------------------
+//
+//  PCスタイル
+//
+//----------------------------------------------------------------------------------------
+@media screen and (min-width: 640px){
+    html{
+        font-size: 75%;
+    }
+}
