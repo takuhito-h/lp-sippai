@@ -1,9 +1,22 @@
 $(window).load(function(){
-    $(".l-overlay-loading").delay(5000).animate({
+
+    $(".l-overlay-loading").delay(3500).velocity({
         top: "-100%"
-    }, 1000, function(){
-        $("html").removeClass("is-loading");
+    }, {
+        duration: 1000,
+        easing: "easeInOut",
+        complete: function(){
+            // $("html, body").scrollTop(0);
+            $("html").removeClass("is-loading");
+        }
     });
+
+    /*------------------------------------------------------------------
+        縦スクロールをリセット
+    ------------------------------------------------------------------*/
+    setTimeout(function(){
+        $("html, body").scrollTop(0);
+    }, 0);
 
     /*------------------------------------------------------------------
         lettering

@@ -82,9 +82,9 @@ td, th { padding: 0; }
 @font-face { font-family: 'Noto Sans Japanese'; font-style: normal; font-weight: 900; src: url(http://fonts.gstatic.com/ea/notosansjapanese/v3/NotoSansJP-Black.woff2) format("woff2"), url(http://fonts.gstatic.com/ea/notosansjapanese/v3/NotoSansJP-Black.woff) format("woff"), url(http://fonts.gstatic.com/ea/notosansjapanese/v3/NotoSansJP-Black.otf) format("opentype"); }
 html { font-size: 60%; }
 html.is-loading { height: 100%; }
-html.is-loading body { overflow: hidden; height: 100%; }
 
-body { position: relative; background: #000 url(../img/bg.gif) repeat-y top center; background-size: 100% auto; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; color: #fff; font-family: "Noto Sans Japanese", "メイリオ", "Meiryo", verdana, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", Osaka,"ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif; font-weight: 900; line-height: 1.5; overflow-y: scroll; min-height: 100%; }
+body { position: relative; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; color: #fff; font-family: "Noto Sans Japanese", "メイリオ", "Meiryo", verdana, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", Osaka,"ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif; font-weight: 900; line-height: 1.5; overflow-y: scroll; min-height: 100%; }
+.is-loading body { overflow: hidden; height: 100%; }
 
 * html body { font-family: "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif; }
 
@@ -108,8 +108,6 @@ input[type=radio] { vertical-align: middle; margin-right: 0.3em; }
 
 a { color: inherit; }
 
-a:hover, input[type="submit"]:hover, button:hover { opacity: 0.6; }
-
 button:active, button:focus { outline: none; }
 
 .is-focus_link { position: relative; top: 1px; }
@@ -126,24 +124,31 @@ button:active, button:focus { outline: none; }
 
 .clearfix:after { content: ""; display: block; clear: both; }
 
-@media screen and (min-width: 1000px) { html { font-size: 100%; } }
-@media screen and (min-width: 640px) { html { font-size: 75%; } }
-.l-overlay-loading { display: none; position: absolute; top: 0; left: 0; z-index: 100; background: #000 url(../img/loading.gif) no-repeat center center; width: 100%; height: 100%; }
+.l-overlay-loading { display: none; position: absolute; top: 0; left: 0; z-index: 100; background: #000; width: 100%; height: 100%; }
 .l-overlay-loading .img-loading { position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; }
+@media screen and (max-width: 640px) { .l-overlay-loading .img-loading { width: 100%; } }
 .is-loading .l-overlay-loading { display: block; }
 
 .l-wrapper { overflow: hidden; }
+@media screen and (min-width: 1000px) { .l-wrapper { /* margin: 0 auto;
+width: 1000px; */ } }
 
-.l-footer { position: fixed; left: 0; bottom: 0; background: url(../img/bg-button.gif) no-repeat bottom center; background-size: 100% auto; padding-top: 11.9%; width: 100%; }
-.l-footer > a { position: absolute; left: 0; top: 0; display: block; -webkit-font-smoothing: none; color: #ff0; font-size: 0.4em; line-height: 3.6em; text-decoration: none; text-align: center; width: 100%; height: 100%; }
+.l-background { position: fixed; top: 0; bottom: 0; left: 0; right: 0; z-index: 10; background: #000 url(../img/bg.jpg) repeat-y top center; background-size: 100% auto; }
 
-@media screen and (min-width: 1000px) { .l-wrapper { margin: 0 auto; width: 1000px; } }
+.l-container { position: relative; z-index: 10; }
+
+.l-footer { position: fixed; left: 0; bottom: 0; z-index: 50; background: url(../img/bg-button.gif) no-repeat bottom center; background-size: auto 100%; padding-top: 11.9%; width: 100%; }
+.l-footer > a { position: absolute; left: 0; top: 0; display: block; color: #ff0; font-size: 0.4em; line-height: 3.6em; text-decoration: none; text-align: center; width: 100%; height: 100%; }
+.l-footer > a:hover { color: #fff; }
+@media screen and (max-width: 640px) { .l-footer > a { font-size: 0.6em; line-height: 4.2em; } }
+@media screen and (max-width: 640px) { .l-footer { padding-top: 20%; } }
+
 .block-mainVisual { line-height: 1; }
 .block-mainVisual .text-probability { font-size: 1.66em; }
 .block-mainVisual .text-probability-val { font-size: 5.8em; letter-spacing: -0.04em; line-height: 0.8; }
 .block-mainVisual .text-probability-val .char3 { font-size: 0.61em; }
-.block-mainVisual .text-refreshing { font-size: 2.2em; letter-spacing: -0.04em; }
-.block-mainVisual .text-refreshing .char1 { letter-spacing: -0.08em; margin-left: -0.15em; }
+.block-mainVisual .text-refreshing { font-size: 2.2em; letter-spacing: -0.06em; }
+.block-mainVisual .text-refreshing .char1 { letter-spacing: -0.08em; margin-left: -0.12em; }
 .block-mainVisual .text-refreshing .char5 { margin-left: -0.01em; letter-spacing: -0.15em; }
 .block-mainVisual .text-failure { font-size: 1.63em; letter-spacing: -0.03em; }
 .block-mainVisual .text-failure .char3 { letter-spacing: -0.1em; }
@@ -151,13 +156,13 @@ button:active, button:focus { outline: none; }
 .block-mainVisual .text-team { font-size: 0.9em; letter-spacing: -0.04em; }
 .block-mainVisual .text-team .char4 { letter-spacing: -0.03em; margin-left: -0.5em; }
 .block-mainVisual .text-team .char10 { letter-spacing: -0.5em; }
-.block-mainVisual .text-improvisational { font-size: 3.1em; letter-spacing: -0.02em; }
+.block-mainVisual .text-improvisational { font-size: 3.05em; letter-spacing: -0.02em; }
 .block-mainVisual .text-improvisational .char4 { display: inline-block; margin-right: -0.12em; }
 
 .block-threePoint { line-height: 1; margin-top: 10%; }
 .block-threePoint .text-team { font-size: 1.45em; letter-spacing: -0.04em; }
-.block-threePoint .text-val { font-size: 4.07em; letter-spacing: -0.06em; }
-.block-threePoint .text-val .char1 { letter-spacing: -0.21em; margin-left: -0.19em; }
+.block-threePoint .text-val { font-size: 4.03em; letter-spacing: -0.06em; }
+.block-threePoint .text-val .char1 { letter-spacing: -0.21em; margin-left: -0.17em; }
 .block-threePoint .text-val .char3 { margin-left: -0.02em; letter-spacing: -0.07em; }
 .block-threePoint .text-point { font-size: 1.3em; letter-spacing: -0.06em; }
 .block-threePoint .text-point .char6 { letter-spacing: -0.15em; }
@@ -165,10 +170,11 @@ button:active, button:focus { outline: none; }
 .block-threePoint .text-point .char8 { margin-left: -0.1em; }
 .block-threePoint .text-point .char9 { display: inline-block; margin-right: -0.23em; }
 
-.block-recommendedPoint { font-size: 0.8em; margin-top: 6.3%; }
+.block-recommendedPoint { font-size: 0.8em; margin-top: 8%; }
 .block-recommendedPoint .text-no { text-align: center; font-size: 0.625em; line-height: 1; letter-spacing: -0.04em; }
-.block-recommendedPoint .heading-point { text-align: center; font-size: 1em; letter-spacing: -0.05em; line-height: 1.3; }
+.block-recommendedPoint .heading-point { text-align: center; font-size: 0.95em; letter-spacing: -0.05em; line-height: 1.3; }
 .block-recommendedPoint .text-desc { text-align: justify; font-size: 0.4em; }
+@media screen and (max-width: 640px) { .block-recommendedPoint .text-desc { font-size: 0.58em; } }
 
 .block-support { margin-top: 3.5%; }
 .block-support .text-support { font-size: 1em; line-height: 1.3; }
@@ -176,30 +182,34 @@ button:active, button:focus { outline: none; }
 .block-what { line-height: 1; margin-top: -0.2em; }
 .block-what .text-what { font-size: 7.3em; }
 .block-what .text-what .char1 { letter-spacing: -0.1em; margin-left: -0.09em; }
-.block-what .text-what .char2 { font-size: 1.2em; margin-left: -0.3em; }
+.block-what .text-what .char2 { vertical-align: -0.055em; font-size: 1.2em; margin-left: -0.3em; }
 
 .block-pointOut { text-align: center; margin-top: 15%; }
 .block-pointOut .text-pointOut { font-size: 0.3em; }
 
 .block-answer { margin-top: 20%; }
-.block-answer .text-answer { letter-spacing: -0.091em; font-size: 1em; line-height: 1.3; }
+.block-answer .text-answer { font-size: 1em; line-height: 1.3; }
 
-.block-catch .text-team { font-size: 10.7em; line-height: 1; }
-.block-catch .text-performance { font-size: 5.34em; line-height: 1; }
-.block-catch .text-performance .char1 { letter-spacing: -0.04em; margin-left: -0.06em; }
+.block-catch .text-team { font-size: 10.1em; line-height: 1; }
+.block-catch .text-performance { font-size: 5.2em; line-height: 1; }
+.block-catch .text-performance .char1 { letter-spacing: -0.04em; margin-left: -0.03em; }
 .block-catch .text-performance .char2 { letter-spacing: -0.03em; }
-.block-catch .text-this { font-size: 4.1em; line-height: 1; }
-.block-catch .text-this .char1 { letter-spacing: -0.25em; margin-left: -0.14em; }
+.block-catch .text-this { font-size: 4em; line-height: 1; }
+.block-catch .text-this .char1 { letter-spacing: -0.25em; margin-left: -0.1em; }
 .block-catch .text-this .char2 { letter-spacing: -0.16em; }
 .block-catch .text-this .char3 { letter-spacing: -0.18em; }
 .block-catch .text-interest { font-size: 3.3em; line-height: 1; }
-.block-catch .text-interest .char1 { letter-spacing: -0.08em; margin-left: -0.04em; }
+.block-catch .text-interest .char1 { letter-spacing: -0.08em; margin-left: -0.03em; }
 .block-catch .text-interest .char2 { letter-spacing: -0.1em; }
 .block-catch .text-interest .char3 { letter-spacing: -0.1em; }
 .block-catch .text-interest .char4 { letter-spacing: -0.1em; }
 
-.block-eventInfo { border: 0.08em solid #fff; margin: 6% 7% 12.5%; padding: 7% 4.3% 4%; }
+.block-eventInfo { border: 0.08em solid #fff; margin: 6% 7% 15%; padding: 7% 4.3% 4%; }
+@media screen and (max-width: 640px) { .block-eventInfo { margin: 6% 3.5% 25%; padding: 5.4% 4.3% 4.2%; } }
 
 .table-eventInfo { font-size: 0.24em; width: 100%; }
 .table-eventInfo caption { font-size: 3.33em; line-height: 1; margin-bottom: 6%; }
+@media screen and (max-width: 640px) { .table-eventInfo tr { font-size: 1.5em; } }
 .table-eventInfo th { width: 14%; }
+@media screen and (max-width: 640px) { .table-eventInfo th { width: 20%; } }
+.table-eventInfo td { letter-spacing: 0.06em; }

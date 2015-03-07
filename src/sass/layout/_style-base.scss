@@ -23,18 +23,11 @@ html{
 
     &.is-loading{
         height: 100%;
-
-        body{
-            overflow: hidden;
-            height: 100%;
-        }
     }
 }
 
 body{
     position: relative;
-    background: #000 url(../img/bg.gif) repeat-y top center;
-    background-size: 100% auto;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%;
@@ -44,6 +37,11 @@ body{
     line-height: 1.5;
     overflow-y: scroll;
     min-height: 100%;
+
+    .is-loading &{
+        overflow: hidden;
+        height: 100%;
+    }
 }
 
 // for IE6
@@ -105,7 +103,7 @@ a{
 a:hover,
 input[type="submit"]:hover,
 button:hover{
-    opacity: 0.6;
+    // opacity: 0.6;
 }
 
 button:active,
@@ -136,26 +134,4 @@ button:focus{
     content: "";
     display: block;
     clear: both;
-}
-
-//----------------------------------------------------------------------------------------
-//
-//  Smartphoneスタイル
-//
-//----------------------------------------------------------------------------------------
-@media screen and (min-width: 1000px){
-    html{
-        font-size: 100%;
-    }
-}
-
-//----------------------------------------------------------------------------------------
-//
-//  PCスタイル
-//
-//----------------------------------------------------------------------------------------
-@media screen and (min-width: 640px){
-    html{
-        font-size: 75%;
-    }
 }

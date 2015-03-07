@@ -42,11 +42,11 @@
 
     .text-refreshing{
         font-size: 2.2em;
-        letter-spacing: -0.04em;
+        letter-spacing: -0.06em;
 
         .char1{
             letter-spacing: -0.08em;
-            margin-left: -0.15em;
+            margin-left: -0.12em;
         }
 
         .char2{
@@ -109,7 +109,7 @@
     }
 
     .text-improvisational{
-        font-size: 3.1em;
+        font-size: 3.05em;
         letter-spacing: -0.02em;
 
         .char4{
@@ -132,12 +132,12 @@
     }
 
     .text-val{
-        font-size: 4.07em;
+        font-size: 4.03em;
         letter-spacing: -0.06em;
 
         .char1{
             letter-spacing: -0.21em;
-            margin-left: -0.19em;
+            margin-left: -0.17em;
         }
 
         .char3{
@@ -174,7 +174,7 @@
 //--------------------------------------------------------------------
 .block-recommendedPoint{
     font-size: 0.8em;
-    margin-top: 6.3%;
+    margin-top: 8%;
 
     .text-no{
         text-align: center;
@@ -185,7 +185,7 @@
 
     .heading-point{
         text-align: center;
-        font-size: 1em;
+        font-size: 0.95em;
         letter-spacing: -0.05em;
         line-height: 1.3;
     }
@@ -193,6 +193,10 @@
     .text-desc{
         text-align: justify;
         font-size: 0.4em;
+
+        @media screen and (max-width: 640px){
+            font-size: 0.58em;
+        }
     }
 }
 
@@ -224,6 +228,7 @@
         }
 
         .char2{
+            vertical-align: -0.055em;
             font-size: 1.2em;
             margin-left: -0.3em;
         }
@@ -249,7 +254,6 @@
     margin-top: 20%;
 
     .text-answer{
-        letter-spacing: -0.091em;
         font-size: 1em;
         line-height: 1.3;
     }
@@ -260,17 +264,17 @@
 //--------------------------------------------------------------------
 .block-catch{
     .text-team{
-        font-size: 10.7em;
+        font-size: 10.1em;
         line-height: 1;
     }
 
     .text-performance{
-        font-size: 5.34em;
+        font-size: 5.2em;
         line-height: 1;
 
         .char1{
             letter-spacing: -0.04em;
-            margin-left: -0.06em;
+            margin-left: -0.03em;
         }
 
         .char2{
@@ -279,12 +283,12 @@
     }
 
     .text-this{
-        font-size: 4.1em;
+        font-size: 4em;
         line-height: 1;
 
         .char1{
             letter-spacing: -0.25em;
-            margin-left: -0.14em;
+            margin-left: -0.1em;
         }
 
         .char2{
@@ -302,7 +306,7 @@
 
         .char1{
             letter-spacing: -0.08em;
-            margin-left: -0.04em;
+            margin-left: -0.03em;
         }
 
         .char2{
@@ -324,8 +328,13 @@
 //--------------------------------------------------------------------
 .block-eventInfo{
     border: 0.08em solid #fff;
-    margin: 6% 7% 12.5%;
+    margin: 6% 7% 15%;
     padding: 7% 4.3% 4%;
+
+    @media screen and (max-width: 640px){
+        margin: 6% 3.5% 25%;
+        padding: 5.4% 4.3% 4.2%;
+    }
 }
 
 //--------------------------------------------------------------------
@@ -341,25 +350,21 @@
         margin-bottom: 6%;
     }
 
+    tr{
+        @media screen and (max-width: 640px){
+            font-size: 1.5em;
+        }
+    }
+
     th{
         width: 14%;
+
+        @media screen and (max-width: 640px){
+            width: 20%;
+        }
     }
-}
 
-//----------------------------------------------------------------------------------------
-//
-//  PCスタイル
-//
-//----------------------------------------------------------------------------------------
-@media screen and (min-width: 1000px){
-
-}
-
-//----------------------------------------------------------------------------------------
-//
-//  Smartphoneスタイル
-//
-//----------------------------------------------------------------------------------------
-@media screen and (max-width: 999px){
-
+    td{
+        letter-spacing: 0.06em;
+    }
 }
