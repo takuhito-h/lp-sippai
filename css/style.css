@@ -81,7 +81,7 @@ td, th { padding: 0; }
 
 @font-face { font-family: 'Noto Sans Japanese'; font-style: normal; font-weight: 900; src: url(http://fonts.gstatic.com/ea/notosansjapanese/v3/NotoSansJP-Black.woff2) format("woff2"), url(http://fonts.gstatic.com/ea/notosansjapanese/v3/NotoSansJP-Black.woff) format("woff"), url(http://fonts.gstatic.com/ea/notosansjapanese/v3/NotoSansJP-Black.otf) format("opentype"); }
 html { font-size: 60%; }
-html.is-loading { height: 100%; }
+html.is-loading { overflow: hidden; height: 100%; }
 
 body { position: relative; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; color: #fff; font-family: "Noto Sans Japanese", "メイリオ", "Meiryo", verdana, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", Osaka,"ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif; font-weight: 900; line-height: 1.5; overflow-y: scroll; min-height: 100%; }
 .is-loading body { overflow: hidden; height: 100%; }
@@ -130,16 +130,14 @@ button:active, button:focus { outline: none; }
 .is-loading .l-overlay-loading { display: block; }
 
 .l-wrapper { overflow: hidden; }
-@media screen and (min-width: 1000px) { .l-wrapper { /* margin: 0 auto;
-width: 1000px; */ } }
 
 .l-background { position: fixed; top: 0; bottom: 0; left: 0; right: 0; z-index: 10; background: #000 url(../img/bg.jpg) repeat-y top center; background-size: 100% auto; }
 
 .l-container { position: relative; z-index: 10; }
 
 .l-footer { position: fixed; left: 0; bottom: 0; z-index: 50; background: url(../img/bg-button.gif) no-repeat bottom center; background-size: auto 100%; padding-top: 11.9%; width: 100%; }
-.l-footer > a { position: absolute; left: 0; top: 0; display: block; color: #ff0; font-size: 0.4em; line-height: 3.6em; text-decoration: none; text-align: center; width: 100%; height: 100%; }
-.l-footer > a:hover { color: #fff; }
+.l-footer > a { position: absolute; left: 0; top: 0; display: block; color: #000; font-size: 0.4em; line-height: 4.1em; text-decoration: none; text-align: center; width: 100%; height: 100%; }
+.l-footer > a:hover { color: #666; }
 @media screen and (max-width: 640px) { .l-footer > a { font-size: 0.6em; line-height: 4.2em; } }
 @media screen and (max-width: 640px) { .l-footer { padding-top: 20%; } }
 
@@ -172,9 +170,44 @@ width: 1000px; */ } }
 
 .block-recommendedPoint { font-size: 0.8em; margin-top: 8%; }
 .block-recommendedPoint .text-no { text-align: center; font-size: 0.625em; line-height: 1; letter-spacing: -0.04em; }
-.block-recommendedPoint .heading-point { text-align: center; font-size: 0.95em; letter-spacing: -0.05em; line-height: 1.3; }
+.block-recommendedPoint .text-no--1 .char4 { margin-left: -0.25em; }
+.block-recommendedPoint .text-no--2 .char4 { margin-left: -0.25em; }
+.block-recommendedPoint .text-no--3 .char4 { margin-left: -0.25em; }
+.block-recommendedPoint .heading-point { text-align: center; font-size: 0.95em; line-height: 1.3; }
+.block-recommendedPoint .heading-point--1 .char2 { margin-left: 0.05em; }
+.block-recommendedPoint .heading-point--1 .char8 { margin-left: 0.05em; }
+.block-recommendedPoint .heading-point--1 .char9 { margin-left: -0.14em; }
+.block-recommendedPoint .heading-point--2 .char1 { margin-left: 0.05em; }
+.block-recommendedPoint .heading-point--2 .char2 { margin-left: 0.05em; }
+.block-recommendedPoint .heading-point--2 .char4 { margin-left: -0.05em; }
+.block-recommendedPoint .heading-point--2 .char5 { margin-left: -0.12em; }
+.block-recommendedPoint .heading-point--2 .char6 { margin-left: -0.05em; }
+.block-recommendedPoint .heading-point--2 .char7 { margin-left: -0.06em; }
+.block-recommendedPoint .heading-point--2 .char8 { margin-left: -0.23em; }
+.block-recommendedPoint .heading-point--5 .char8 { margin-left: -0.25em; }
+.block-recommendedPoint .heading-point--5 .char10 { margin-left: -0.18em; }
 .block-recommendedPoint .text-desc { text-align: justify; font-size: 0.4em; }
 @media screen and (max-width: 640px) { .block-recommendedPoint .text-desc { font-size: 0.58em; } }
+.block-recommendedPoint .text-desc--1 .char10 { margin-left: -0.08em; }
+.block-recommendedPoint .text-desc--1 .char11 { margin-left: -0.08em; }
+.block-recommendedPoint .text-desc--1 .char19 { margin-left: -0.23em; }
+.block-recommendedPoint .text-desc--1 .char20 { margin-left: -0.04em; }
+.block-recommendedPoint .text-desc--1 .char30 { margin-left: -0.16em; }
+.block-recommendedPoint .text-desc--1 .char31 { margin-left: -0.16em; }
+.block-recommendedPoint .text-desc--1 .char54 { margin-left: -0.2em; }
+.block-recommendedPoint .text-desc--2 .char11 { margin-left: -0.18em; }
+.block-recommendedPoint .text-desc--2 .char20 { margin-left: -0.18em; }
+.block-recommendedPoint .text-desc--2 .char21 { margin-left: 0.03em; }
+.block-recommendedPoint .text-desc--2 .char22 { margin-left: -0.03em; }
+.block-recommendedPoint .text-desc--2 .char23 { margin-left: -0.05em; }
+.block-recommendedPoint .text-desc--2 .char24 { margin-left: -0.08em; }
+.block-recommendedPoint .text-desc--2 .char25 { margin-left: -0.07em; }
+.block-recommendedPoint .text-desc--2 .char28 { margin-left: -0.05em; }
+.block-recommendedPoint .text-desc--2 .char29 { margin-left: -0.05em; }
+.block-recommendedPoint .text-desc--2 .char58 { margin-left: -0.1em; }
+.block-recommendedPoint .text-desc--2 .char59 { margin-left: -0.1em; }
+.block-recommendedPoint .text-desc--5 .char104 { margin-left: -0.2em; }
+.block-recommendedPoint .text-desc--6 .char46 { margin-left: -0.4em; }
 
 .block-support { margin-top: 3.5%; }
 .block-support .text-support { font-size: 1em; line-height: 1.3; }
@@ -184,11 +217,28 @@ width: 1000px; */ } }
 .block-what .text-what .char1 { letter-spacing: -0.1em; margin-left: -0.09em; }
 .block-what .text-what .char2 { vertical-align: -0.055em; font-size: 1.2em; margin-left: -0.3em; }
 
-.block-pointOut { text-align: center; margin-top: 15%; }
-.block-pointOut .text-pointOut { font-size: 0.3em; }
+.block-pointOut { text-align: center; font-size: 0.5em; margin-top: 15%; }
 
 .block-answer { margin-top: 20%; }
 .block-answer .text-answer { font-size: 1em; line-height: 1.3; }
+.block-answer .text-answer .char2 { margin-left: -0.13em; }
+.block-answer .text-answer .char3 { margin-left: -0.11em; }
+.block-answer .text-answer .char4 { margin-left: -0.11em; }
+.block-answer .text-answer .char5 { margin-left: -0.10em; }
+.block-answer .text-answer .char6 { margin-left: -0.07em; }
+.block-answer .text-answer .char7 { margin-left: -0.03em; }
+.block-answer .text-answer .char8 { margin-left: -0.05em; }
+.block-answer .text-answer .char10 { margin-left: -0.48em; }
+.block-answer .text-answer .char11 { margin-left: -0.03em; }
+.block-answer .text-answer .char14 { margin-left: -0.05em; }
+.block-answer .text-answer .char15 { margin-left: -0.09em; }
+.block-answer .text-answer .char16 { margin-left: -0.41em; }
+.block-answer .text-answer .char17 { margin-left: -0.11em; }
+.block-answer .text-answer .char18 { margin-left: -0.36em; }
+.block-answer .text-answer .char19 { margin-left: -0.10em; }
+.block-answer .text-answer .char25 { margin-left: -0.03em; }
+.block-answer .text-answer .char26 { margin-left: -0.05em; }
+.block-answer .text-answer .char28 { margin-left: -0.14em; }
 
 .block-catch .text-team { font-size: 10.1em; line-height: 1; }
 .block-catch .text-performance { font-size: 5.2em; line-height: 1; }
@@ -209,7 +259,7 @@ width: 1000px; */ } }
 
 .table-eventInfo { font-size: 0.24em; width: 100%; }
 .table-eventInfo caption { font-size: 3.33em; line-height: 1; margin-bottom: 6%; }
-@media screen and (max-width: 640px) { .table-eventInfo tr { font-size: 1.5em; } }
+@media screen and (max-width: 640px) { .table-eventInfo tr { font-size: 1.7em; } }
 .table-eventInfo th { width: 14%; }
 @media screen and (max-width: 640px) { .table-eventInfo th { width: 20%; } }
 .table-eventInfo td { letter-spacing: 0.06em; }

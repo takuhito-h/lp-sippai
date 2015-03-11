@@ -22,6 +22,7 @@ html{
     font-size: 60%;
 
     &.is-loading{
+        overflow: hidden;
         height: 100%;
     }
 }
